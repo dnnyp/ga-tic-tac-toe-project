@@ -12,6 +12,60 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <header>
+        <h1>Tic Tac Toe</h1>
+        <hr>
+      </header>
+      <main>
+        <section id="authentication">
+          <h2>Authentication</h2>
+          <div id="message"></div>
+          <form id="sign-up" class="border">
+            <fieldset>
+              <legend>Sign up</legend>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <button>Sign up</button>
+            </fieldset>
+          </form>
+          <form id="sign-in" class="border">
+            <fieldset>
+              <legend>Sign in</legend>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <button>Sign in</button>
+            </fieldset>
+          </form>
+          <form id="change-password" class="border">
+            <fieldset>
+              <legend>Change password</legend>
+              <input type="password" name="passwords[old]" placeholder="Old Password">
+              <input type="password" name="passwords[new]" placeholder="New Password">
+              <button>Change password</button>
+            </fieldset>
+          </form>
+          <form id="sign-out" class="border">
+            <fieldset>
+              <button>Sign out</button>
+            </fieldset>
+          </form>
+        </section>
+        <hr>
+        <section id="game" class="container">
+          <div id="game-board" class="row">
+            <div id="square-0" class="col-4 box" data-cell-index="0">0</div>
+            <div id="square-1" class="col-4 box" data-cell-index="1">1</div>
+            <div id="square-2" class="col-4 box" data-cell-index="2">2</div>
+            <div id="square-3" class="col-4 box" data-cell-index="3">3</div>
+            <div id="square-4" class="col-4 box" data-cell-index="4">4</div>
+            <div id="square-5" class="col-4 box" data-cell-index="5">5</div>
+            <div id="square-6" class="col-4 box" data-cell-index="6">6</div>
+            <div id="square-7" class="col-4 box" data-cell-index="7">7</div>
+            <div id="square-8" class="col-4 box" data-cell-index="8">8</div>
+          </div>
+          <div id="game-status" class="row"></div>
+        </section>
+      </main>
     </body>
 </html>
