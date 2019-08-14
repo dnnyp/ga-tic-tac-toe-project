@@ -1,5 +1,3 @@
-// engine.changePlayer()
-
 'use strict'
 
 const engine = require('./engine')
@@ -33,12 +31,17 @@ const gameOverFailure = () => {
   $('#game-status').text('Please start a new game!')
 }
 
-const getStatsSuccess = () => {
-  //
+const getGamesPlayedSuccess = data => {
+  store.gamesPlayed = data.games.length
+}
+
+const getGamesWonSuccess = data => {
+  store.gamesWon = data.games.length
+  $('#game-stats').text('Games Played: ' + store.gamesPlayed + ' | Games Won: ' + store.gamesWon)
 }
 
 const getStatsFailure = () => {
-  //
+  $('#game-stats').text('Failed getting stats')
 }
 
 module.exports = {
@@ -47,6 +50,7 @@ module.exports = {
   squareClickSuccess,
   takenSquareFailure,
   gameOverFailure,
-  getStatsSuccess,
+  getGamesPlayedSuccess,
+  getGamesWonSuccess,
   getStatsFailure
 }

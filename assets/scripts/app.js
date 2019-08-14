@@ -29,4 +29,5 @@ $(() => {
   $('#square-7').on('click', gameEvents.onSquareClick)
   $('#square-8').on('click', gameEvents.onSquareClick)
   $('#new-game').on('click', gameEvents.onNewGame)
+  $('#get-stats').on('click', gameEvents.onGetStats)
 })
