@@ -46,8 +46,9 @@ const onGetStats = event => {
 
   // total games played
   api.index()
-    .then(ui.getStatsSuccess)
+    .then(ui.getGamesPlayedSuccess)
     .then(api.indexOver)
+    .then(ui.getGamesWonSuccess)
     .catch(ui.getStatsFailure)
 }
 
