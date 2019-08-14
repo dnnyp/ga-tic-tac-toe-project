@@ -33,9 +33,9 @@ const checkForWin = (index, currentPlayer) => {
     return store.currentPlayer + ' wins!'
   } else if (combinations.every(line => !line.includes(''))) {
     store.isOver = true
-    return 'draw'
+    return 'Draw'
   } else {
-    return 'game in progress...'
+    return 'Game in progress'
   }
 }
 

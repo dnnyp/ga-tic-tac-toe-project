@@ -16,24 +16,28 @@ const onSquareClick = event => {
 
   store.index = $(event.target).data('cell-index')
 
-  if (engine.isEmptySquare(store.index)) {
-    store.gameStatus = engine.checkForWin(store.index, store.currentPlayer)
+  if (store.gameStatus === 'Game in progress') {
+    if (engine.isEmptySquare(store.index)) {
+      store.gameStatus = engine.checkForWin(store.index, store.currentPlayer)
 
-    const move = {
-      game: {
-        cell: {
-          index: store.index,
-          value: store.currentPlayer
-        },
-        over: store.isOver
+      const move = {
+        game: {
+          cell: {
+            index: store.index,
+            value: store.currentPlayer
+          },
+          over: store.isOver
+        }
       }
-    }
 
-    api.update(move)
-      .then(ui.squareClickSuccess)
-      .catch(ui.squareClickFailure)
+      api.update(move)
+        .then(ui.squareClickSuccess)
+        .catch(ui.takenSquareFailure)
+    } else {
+      ui.takenSquareFailure()
+    }
   } else {
-    ui.squareClickFailure()
+    ui.gameOverFailure()
   }
 }
 

@@ -10,6 +10,7 @@ const newGameSuccess = data => {
   store.game = data.game
   store.currentPlayer = 'x'
   store.isOver = false
+  store.gameStatus = 'Game in progress'
   $('.game-square').text('-')
 }
 
@@ -21,12 +22,15 @@ const squareClickSuccess = data => {
   $('#game-status').text(store.gameStatus)
   store.game = data.game
   $('#square-' + store.index).text(store.currentPlayer)
-  console.log(store.game.cells)
   engine.changePlayer()
 }
 
-const squareClickFailure = () => {
-  $('#game-status').text('Unsuccessful move')
+const takenSquareFailure = () => {
+  $('#game-status').text('Square already taken!')
+}
+
+const gameOverFailure = () => {
+  $('#game-status').text('Please start a new game!')
 }
 
 const getStatsSuccess = () => {
@@ -41,7 +45,8 @@ module.exports = {
   newGameSuccess,
   newGameFailure,
   squareClickSuccess,
-  squareClickFailure,
+  takenSquareFailure,
+  gameOverFailure,
   getStatsSuccess,
   getStatsFailure
 }

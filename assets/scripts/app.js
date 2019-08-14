@@ -18,6 +18,7 @@ $(() => {
 
   store.currentPlayer = 'x'
   store.isOver = false
+  store.gameStatus = 'Game in progress'
   $('#square-0').on('click', gameEvents.onSquareClick)
   $('#square-1').on('click', gameEvents.onSquareClick)
   $('#square-2').on('click', gameEvents.onSquareClick)
