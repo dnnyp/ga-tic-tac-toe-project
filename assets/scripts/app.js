@@ -17,6 +17,7 @@ $(() => {
   $('#sign-out').on('submit', authEvents.onSignOut)
 
   store.currentPlayer = 'x'
+  store.isOver = false
   $('#square-0').on('click', gameEvents.onSquareClick)
   $('#square-1').on('click', gameEvents.onSquareClick)
   $('#square-2').on('click', gameEvents.onSquareClick)
@@ -26,4 +27,5 @@ $(() => {
   $('#square-6').on('click', gameEvents.onSquareClick)
   $('#square-7').on('click', gameEvents.onSquareClick)
   $('#square-8').on('click', gameEvents.onSquareClick)
+  $('#new-game').on('click', gameEvents.onNewGame)
 })

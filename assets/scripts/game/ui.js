@@ -2,11 +2,15 @@
 
 'use strict'
 
+const engine = require('./engine')
 const store = require('./../store')
 
 const newGameSuccess = data => {
-  store.game = data.game
   $('#game-status').text('You started a new game!')
+  store.game = data.game
+  store.currentPlayer = 'x'
+  store.isOver = false
+  $('.game-square').text('-')
 }
 
 const newGameFailure = () => {
@@ -14,12 +18,15 @@ const newGameFailure = () => {
 }
 
 const squareClickSuccess = data => {
+  $('#game-status').text(store.gameStatus)
   store.game = data.game
-  $('#game-status').text('Successful move!')
+  $('#square-' + store.index).text(store.currentPlayer)
+  console.log(store.game.cells)
+  engine.changePlayer()
 }
 
 const squareClickFailure = () => {
-  $('#game-status').text('Unsuccessful move!')
+  $('#game-status').text('Unsuccessful move')
 }
 
 const getStatsSuccess = () => {

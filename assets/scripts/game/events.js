@@ -3,9 +3,9 @@
 const api = require('./api')
 const ui = require('./ui')
 const engine = require('./engine')
+const store = require('./../store')
 
-// need to initialize game on signin
-const onNewGame = () => {
+const onNewGame = event => {
   api.create()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
@@ -14,22 +14,23 @@ const onNewGame = () => {
 const onSquareClick = event => {
   event.preventDefault()
 
-  const index = $(event.target).data('cell-index')
+  store.index = $(event.target).data('cell-index')
 
-  if (engine.isEmptySquare(index)) {
+  if (engine.isEmptySquare(store.index)) {
+    store.gameStatus = engine.checkForWin(store.index, store.currentPlayer)
+
     const move = {
       game: {
         cell: {
-          index: index,
-          value: engine.currentPlayer()
+          index: store.index,
+          value: store.currentPlayer
         },
-        over: false // engine.checkForWin()
+        over: store.isOver
       }
     }
 
     api.update(move)
       .then(ui.squareClickSuccess)
-      .then(engine.changePlayer)
       .catch(ui.squareClickFailure)
   } else {
     ui.squareClickFailure()
