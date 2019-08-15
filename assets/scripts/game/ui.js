@@ -4,7 +4,7 @@ const engine = require('./engine')
 const store = require('./../store')
 
 const newGameSuccess = data => {
-  $('#game-status').text('You started a new game!')
+  $('#game-status').html('<h1>You started a new game!</h1>')
   store.game = data.game
   store.currentPlayer = 'x'
   store.isOver = false
@@ -13,22 +13,22 @@ const newGameSuccess = data => {
 }
 
 const newGameFailure = () => {
-  $('#game-status').text('New game failure')
+  $('#game-status').html('<h1>New game failure</h1>')
 }
 
 const squareClickSuccess = data => {
-  $('#game-status').text(store.gameStatus)
+  $('#game-status').html('<h1>' + store.gameStatus + '</h1>')
   store.game = data.game
   $('#square-' + store.index).text(store.currentPlayer)
   engine.changePlayer()
 }
 
 const takenSquareFailure = () => {
-  $('#game-status').text('Square already taken!')
+  $('#game-status').html('<h1>Square already taken!<h1>')
 }
 
 const gameOverFailure = () => {
-  $('#game-status').text('Please start a new game!')
+  $('#game-status').html('<h1>Please start a new game!</h1>')
 }
 
 const getGamesPlayedSuccess = data => {
@@ -43,7 +43,9 @@ const getGamesWonSuccess = data => {
 }
 
 const getStatsFailure = () => {
-  $('#game-stats').text('Failed getting stats')
+  $('#message').text('Failed getting stats')
+  $('#message').removeClass()
+  $('#message').addClass('alert alert-danger')
 }
 
 module.exports = {
