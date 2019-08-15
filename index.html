@@ -13,61 +13,103 @@
     </head>
     <body>
       <header>
-        <h1>Tic Tac Toe</h1>
-        <hr>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <a class="navbar-brand" href="https://dnnyp.github.io/game-project-client/">Tic Tac Toe</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown pr-2">
+                <a class="nav-link dropdown-toggle" href="#" id="sign-up-button" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Sign up
+                </a>
+                <div class="dropdown-menu p-4" aria-labelledby="sign-up-button">
+                  <form id="sign-up">
+                    <div class="form-group">
+                      <label for="sign-up-email">Email</label>
+                      <input type="text" class="form-control" id="sign-up-email" name="credentials[email]" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="sign-up-password">Password</label>
+                      <input type="password" class="form-control" id="sign-up-password" name="credentials[password]" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                      <label for="sign-up-password-confirm">Confirm Password</label>
+                      <input type="password" class="form-control" id="sign-up-password-confirm" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign up</button>
+                  </form>
+                </div>
+              </li>
+              <li class="nav-item dropdown pr-2">
+                <a class="nav-link dropdown-toggle" href="#" id="sign-in-button" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Sign in
+                </a>
+                <div class="dropdown-menu p-4" aria-labelledby="sign-in-button">
+                  <form id="sign-in">
+                    <div class="form-group">
+                      <label for="sign-in-email">Email</label>
+                      <input type="text" class="form-control" id="sign-in-email" name="credentials[email]" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="sign-in-password">Password</label>
+                      <input type="password" class="form-control" id="sign-in-password" name="credentials[password]" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                  </form>
+                </div>
+              </li>
+              <li class="nav-item dropdown pr-2">
+                <a class="nav-link dropdown-toggle" href="#" id="change-password-button" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Change password
+                </a>
+                <div class="dropdown-menu p-4" aria-labelledby="change-password-button">
+                  <form id="change-password">
+                    <div class="form-group">
+                      <label for="old-password">Old Password</label>
+                      <input type="password" class="form-control" id="old-password" name="passwords[old]" placeholder="Old Password">
+                    </div>
+                    <div class="form-group">
+                      <label for="new-password">New Password</label>
+                      <input type="password" class="form-control" id="new-password" name="passwords[new]" placeholder="New Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Change Password</button>
+                  </form>
+                </div>
+              </li>
+              <li class="nav-item pr-2">
+                <button id="sign-out" class="btn btn-secondary" aria-disabled="true">Sign out</button>
+              </li>
+              <li class="nav-item pr-2">
+                <button id="new-game" class="btn btn-secondary" aria-disabled="true">New game</button>
+              </li>
+              <li class="nav-item pr-2">
+                <button id="get-stats" class="btn btn-secondary" aria-disabled="true">Get stats</button>
+              </li>
+            </ul>
+            <div id="message" class="alert alert-primary" role="alert">
+              Sign in to play!
+            </div>
+          </div>
+        </nav>
       </header>
       <main>
-        <section id="authentication">
-          <h2>Authentication</h2>
-          <div id="message"></div>
-          <form id="sign-up" class="border">
-            <fieldset>
-              <legend>Sign up</legend>
-              <input type="text" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-              <button>Sign up</button>
-            </fieldset>
-          </form>
-          <form id="sign-in" class="border">
-            <fieldset>
-              <legend>Sign in</legend>
-              <input type="text" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <button>Sign in</button>
-            </fieldset>
-          </form>
-          <form id="change-password" class="border">
-            <fieldset>
-              <legend>Change password</legend>
-              <input type="password" name="passwords[old]" placeholder="Old Password">
-              <input type="password" name="passwords[new]" placeholder="New Password">
-              <button>Change password</button>
-            </fieldset>
-          </form>
-          <form id="sign-out" class="border">
-            <fieldset>
-              <button>Sign out</button>
-            </fieldset>
-          </form>
-        </section>
-        <hr>
-        <section id="game" class="container">
+        <section id="game" class="container m-5">
           <div id="game-board" class="row">
-            <div id="square-0" class="game-square col-4 box" data-cell-index="0">0</div>
-            <div id="square-1" class="game-square col-4 box" data-cell-index="1">1</div>
-            <div id="square-2" class="game-square col-4 box" data-cell-index="2">2</div>
-            <div id="square-3" class="game-square col-4 box" data-cell-index="3">3</div>
-            <div id="square-4" class="game-square col-4 box" data-cell-index="4">4</div>
-            <div id="square-5" class="game-square col-4 box" data-cell-index="5">5</div>
-            <div id="square-6" class="game-square col-4 box" data-cell-index="6">6</div>
-            <div id="square-7" class="game-square col-4 box" data-cell-index="7">7</div>
-            <div id="square-8" class="game-square col-4 box" data-cell-index="8">8</div>
+            <div id="square-0" class="game-square col-4" data-cell-index="0"></div>
+            <div id="square-1" class="game-square col-4" data-cell-index="1"></div>
+            <div id="square-2" class="game-square col-4" data-cell-index="2"></div>
+            <div id="square-3" class="game-square col-4" data-cell-index="3"></div>
+            <div id="square-4" class="game-square col-4" data-cell-index="4"></div>
+            <div id="square-5" class="game-square col-4" data-cell-index="5"></div>
+            <div id="square-6" class="game-square col-4" data-cell-index="6"></div>
+            <div id="square-7" class="game-square col-4" data-cell-index="7"></div>
+            <div id="square-8" class="game-square col-4" data-cell-index="8"></div>
           </div>
           <div id="game-status" class="row"></div>
-          <button id="new-game" class="border">New game</button>
           <div id="game-stats" class="row"></div>
-          <button id="get-stats" class="border">Get stats</button>
         </section>
       </main>
     </body>

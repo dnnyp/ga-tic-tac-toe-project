@@ -4,16 +4,12 @@ $black: #000;
 $red: #f00;
 $green: #080;
 
-.border {
-  border: 3px solid $black;
-  margin: 20px;
-  padding: 20px;
+.dropdown-menu {
+  width: 300px;
 }
 
-.failure {
-  border: 3px solid $red;
-}
-
-.success {
-  border: 3px solid $green;
+.game-square {
+  border: 1px solid $black;
+  height: 250px;
+  width: 200px;
 }
