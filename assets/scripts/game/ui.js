@@ -9,7 +9,7 @@ const newGameSuccess = data => {
   store.currentPlayer = 'x'
   store.isOver = false
   store.gameStatus = 'Game in progress'
-  $('.game-square').text('-')
+  $('.game-square').text('')
 }
 
 const newGameFailure = () => {
@@ -37,7 +37,9 @@ const getGamesPlayedSuccess = data => {
 
 const getGamesWonSuccess = data => {
   store.gamesWon = data.games.length
-  $('#game-stats').text('Games Played: ' + store.gamesPlayed + ' | Games Won: ' + store.gamesWon)
+  $('#message').text('Games Played: ' + store.gamesPlayed + ' | Games Won: ' + store.gamesWon)
+  $('#message').removeClass()
+  $('#message').addClass('alert alert-info')
 }
 
 const getStatsFailure = () => {
