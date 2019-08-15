@@ -7,6 +7,7 @@ const signUpSuccess = () => {
   $('#message').removeClass()
   $('#message').addClass('alert alert-success')
   $('form').trigger('reset')
+  $('#sign-up-container').dropdown('toggle')
 }
 
 const signUpFailure = () => {
@@ -25,10 +26,13 @@ const signInSuccess = data => {
   $('#change-password-button').removeClass('d-none')
   $('#sign-up-button').addClass('d-none')
   $('#sign-in-button').addClass('d-none')
+  $('#sign-up-container').addClass('d-none')
+  $('#sign-in-container').addClass('d-none')
   $('#sign-out').removeClass('d-none')
   $('#new-game').removeClass('d-none')
   $('#get-stats').removeClass('d-none')
   $('#game-board').removeClass('d-none')
+  $('#sign-in-container').dropdown('toggle')
 }
 
 const signInFailure = () => {
@@ -43,6 +47,7 @@ const changePasswordSuccess = () => {
   $('#message').removeClass()
   $('#message').addClass('alert alert-success')
   $('form').trigger('reset')
+  $('#change-password-container').dropdown('toggle')
 }
 
 const changePasswordFailure = () => {
@@ -60,6 +65,8 @@ const signOutSuccess = () => {
   $('#change-password-button').addClass('d-none')
   $('#sign-up-button').removeClass('d-none')
   $('#sign-in-button').removeClass('d-none')
+  $('#sign-up-container').removeClass('d-none')
+  $('#sign-in-container').removeClass('d-none')
   $('#sign-out').addClass('d-none')
   $('#new-game').addClass('d-none')
   $('#get-stats').addClass('d-none')
