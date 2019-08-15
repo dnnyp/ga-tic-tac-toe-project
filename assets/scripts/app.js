@@ -15,6 +15,7 @@ $(() => {
   $('#sign-out').addClass('d-none')
   $('#new-game').addClass('d-none')
   $('#get-stats').addClass('d-none')
+  $('#game-board').addClass('d-none')
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)

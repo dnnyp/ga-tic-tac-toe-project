@@ -7,7 +7,7 @@ $green: #080;
 $grey: #6c757d;
 
 .container {
-  width: 600px;
+  width: 300px;
 }
 
 .dropdown-menu {
@@ -20,6 +20,20 @@ $grey: #6c757d;
   display: flex;
   font-family: 'Permanent Marker', cursive;
   font-size: 120px;
-  height: 200px;
+  height: 100px;
   justify-content: center;
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 600px;
+  }
+
+  .dropdown-menu {
+    width: 300px;
+  }
+
+  .game-square {
+    height: 200px;
+  }
 }
