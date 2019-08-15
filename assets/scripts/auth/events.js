@@ -12,7 +12,8 @@ const onSignUp = event => {
 
   api.signUp(data)
     .then(ui.signUpSuccess)
-    .then(onSignIn(event))
+    .then(() => api.signIn(data))
+    .then(ui.signInSuccess)
     .catch(ui.signUpFailure)
 }
 
@@ -37,7 +38,7 @@ const onChangePassword = event => {
     .catch(ui.changePasswordFailure)
 }
 
-const onSignOut = () => {
+const onSignOut = event => {
   event.preventDefault()
 
   api.signOut()

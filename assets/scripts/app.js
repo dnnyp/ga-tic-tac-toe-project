@@ -11,10 +11,14 @@ const gameEvents = require('./game/events')
 const store = require('./store')
 
 $(() => {
+  $('#change-password-button').addClass('d-none')
+  $('#sign-out').addClass('d-none')
+  $('#new-game').addClass('d-none')
+  $('#get-stats').addClass('d-none')
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#sign-out').on('submit', authEvents.onSignOut)
+  $('#sign-out').on('click', authEvents.onSignOut)
 
   store.currentPlayer = 'x'
   store.isOver = false
