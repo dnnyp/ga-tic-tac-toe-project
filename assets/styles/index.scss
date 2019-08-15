@@ -1,15 +1,25 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
 
 $black: #000;
 $red: #f00;
 $green: #080;
+$grey: #6c757d;
+
+.container {
+  width: 600px;
+}
 
 .dropdown-menu {
   width: 300px;
 }
 
 .game-square {
-  border: 1px solid $black;
-  height: 250px;
-  width: 200px;
+  align-items: center;
+  color: $grey;
+  display: flex;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 120px;
+  height: 200px;
+  justify-content: center;
 }

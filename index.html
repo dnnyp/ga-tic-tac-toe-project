@@ -13,7 +13,7 @@
     </head>
     <body>
       <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <a class="navbar-brand" href="https://dnnyp.github.io/game-project-client/">Tic Tac Toe</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -79,14 +79,14 @@
                   </form>
                 </div>
               </li>
-              <li class="nav-item pr-2">
-                <button id="sign-out" class="btn btn-secondary" aria-disabled="true">Sign out</button>
+              <li class="nav-item pr-3">
+                <button id="sign-out" class="btn btn-danger">Sign out</button>
               </li>
-              <li class="nav-item pr-2">
-                <button id="new-game" class="btn btn-secondary" aria-disabled="true">New game</button>
+              <li class="nav-item pr-3">
+                <button id="new-game" class="btn btn-secondary">New game</button>
               </li>
-              <li class="nav-item pr-2">
-                <button id="get-stats" class="btn btn-secondary" aria-disabled="true">Get stats</button>
+              <li class="nav-item pr-3">
+                <button id="get-stats" class="btn btn-secondary">Get stats</button>
               </li>
             </ul>
             <div id="message" class="alert alert-primary" role="alert">
@@ -96,20 +96,21 @@
         </nav>
       </header>
       <main>
-        <section id="game" class="container m-5">
-          <div id="game-board" class="row">
-            <div id="square-0" class="game-square col-4" data-cell-index="0"></div>
-            <div id="square-1" class="game-square col-4" data-cell-index="1"></div>
-            <div id="square-2" class="game-square col-4" data-cell-index="2"></div>
-            <div id="square-3" class="game-square col-4" data-cell-index="3"></div>
-            <div id="square-4" class="game-square col-4" data-cell-index="4"></div>
-            <div id="square-5" class="game-square col-4" data-cell-index="5"></div>
-            <div id="square-6" class="game-square col-4" data-cell-index="6"></div>
-            <div id="square-7" class="game-square col-4" data-cell-index="7"></div>
-            <div id="square-8" class="game-square col-4" data-cell-index="8"></div>
+        <section id="game">
+          <div id="game-board" class="container mt-5">
+            <div class="row">
+              <div id="square-0" class="game-square col-4 border" data-cell-index="0"></div>
+              <div id="square-1" class="game-square col-4 border" data-cell-index="1"></div>
+              <div id="square-2" class="game-square col-4 border" data-cell-index="2"></div>
+              <div id="square-3" class="game-square col-4 border" data-cell-index="3"></div>
+              <div id="square-4" class="game-square col-4 border" data-cell-index="4"></div>
+              <div id="square-5" class="game-square col-4 border" data-cell-index="5"></div>
+              <div id="square-6" class="game-square col-4 border" data-cell-index="6"></div>
+              <div id="square-7" class="game-square col-4 border" data-cell-index="7"></div>
+              <div id="square-8" class="game-square col-4 border" data-cell-index="8"></div>
+            </div>
+            <div id="game-status" class="alert alert-light row" role="alert"></div>
           </div>
-          <div id="game-status" class="row"></div>
-          <div id="game-stats" class="row"></div>
         </section>
       </main>
     </body>
