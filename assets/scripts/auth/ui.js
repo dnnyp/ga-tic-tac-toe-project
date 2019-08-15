@@ -21,6 +21,9 @@ const signInSuccess = data => {
   $('#message').text('Signed in successfully! User is ' + store.user.email)
   $('#message').removeClass()
   $('#message').addClass('alert alert-success')
+  $('#message').fadeTo(2000, 500).slideUp(500, function () {
+    $('#message').slideUp(500)
+  })
   $('form').trigger('reset')
   $('#change-password-button').removeClass('d-none')
   $('#sign-up-button').addClass('d-none')
