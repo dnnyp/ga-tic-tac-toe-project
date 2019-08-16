@@ -14,13 +14,6 @@ body {
   background-image: url('public/seigaiha.png');
 }
 
-main {
-  align-items: center;
-  display: flex;
-  height: calc(100vh - 60px);
-  justify-content: center;
-}
-
 .container {
   width: 300px;
 }
@@ -54,6 +47,13 @@ main {
 
 .welcome {
   font-family: 'Permanent Marker', cursive;
+}
+
+.welcome-container {
+  align-items: center;
+  display: flex;
+  height: calc(100vh - 150px);
+  justify-content: center;
 }
 
 // Medium devices (tablets, 768px and up)
@@ -90,10 +90,6 @@ main {
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  main {
-    height: calc(100vh - 150px);
-  }
-
   .container {
     width: 540px;
   }
@@ -109,5 +105,9 @@ main {
 
   .welcome {
     font-size: 140px;
+  }
+
+  .welcome-container {
+    height: calc(100vh - 200px);
   }
 }
