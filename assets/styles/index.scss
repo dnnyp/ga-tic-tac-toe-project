@@ -23,7 +23,7 @@ $grey: #6c757d;
   color: $primary;
   display: flex;
   font-family: 'Permanent Marker', cursive;
-  font-size: 90px;
+  font-size: 100px;
   height: 100px;
   justify-content: center;
 }
@@ -41,17 +41,28 @@ $grey: #6c757d;
   text-align: center;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
+  .container {
+    width: 450px;
+  }
+
+  .game-square {
+    font-size: 150px;
+    height: 150px;
+  }
+
+  #welcome-message {
+    font-size: 90px;
+  }
+}
+
+@media (min-width: 992px) {
   .container {
     width: 600px;
   }
 
-  .dropdown-menu {
-    width: 300px;
-  }
-
   .game-square {
-    font-size: 120px;
+    font-size: 180px;
     height: 200px;
   }
 
@@ -60,6 +71,6 @@ $grey: #6c757d;
   }
 
   #welcome-message {
-    font-size: 90px;
+    font-size: 120px;
   }
 }
