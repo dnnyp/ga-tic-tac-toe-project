@@ -3,7 +3,7 @@
 const store = require('./../store')
 
 const signUpSuccess = () => {
-  $('#message-container').append('<div class="alert alert-success ml-2" role="alert">Sign up success</div>')
+  $('#message-container').append('<div class="alert alert-success no-select ml-2" role="alert">Sign up success</div>')
   $('.alert').delay(1500).slideUp(200, function () {
     $(this).alert('close')
   })
@@ -11,7 +11,7 @@ const signUpSuccess = () => {
 }
 
 const signUpFailure = () => {
-  $('#message-container').append('<div class="alert alert-danger ml-2" role="alert">Sign up failed</div>')
+  $('#message-container').append('<div class="alert alert-danger no-select ml-2" role="alert">Sign up failed</div>')
   $('.alert').delay(1500).slideUp(200, function () {
     $(this).alert('close')
   })
@@ -20,7 +20,7 @@ const signUpFailure = () => {
 
 const signInSuccess = data => {
   store.user = data.user
-  $('#message-container').append('<div class="alert alert-success ml-2" role="alert">Signed in successfully! User is ' + store.user.email + '</div>')
+  $('#message-container').append('<div class="alert alert-success no-select ml-2" role="alert">Signed in successfully! User is ' + store.user.email + '</div>')
   $('.alert').delay(2000).slideUp(200, function () {
     $(this).alert('close')
   })
@@ -38,7 +38,7 @@ const signInSuccess = data => {
 }
 
 const signInFailure = () => {
-  $('#message-container').append('<div class="alert alert-danger ml-2" role="alert">Sign in failed</div>')
+  $('#message-container').append('<div class="alert alert-danger no-select ml-2" role="alert">Sign in failed</div>')
   $('.alert').delay(1500).slideUp(200, function () {
     $(this).alert('close')
   })
@@ -46,7 +46,7 @@ const signInFailure = () => {
 }
 
 const changePasswordSuccess = () => {
-  $('#message-container').append('<div class="alert alert-success ml-2" role="alert">Changed password successfully</div>')
+  $('#message-container').append('<div class="alert alert-success no-select ml-2" role="alert">Changed password successfully</div>')
   $('.alert').delay(1500).slideUp(200, function () {
     $(this).alert('close')
   })
@@ -54,7 +54,7 @@ const changePasswordSuccess = () => {
 }
 
 const changePasswordFailure = () => {
-  $('#message-container').append('<div class="alert alert-danger ml-2" role="alert">Change password failed</div>')
+  $('#message-container').append('<div class="alert alert-danger no-select ml-2" role="alert">Change password failed</div>')
   $('.alert').delay(1500).slideUp(200, function () {
     $(this).alert('close')
   })
@@ -63,7 +63,7 @@ const changePasswordFailure = () => {
 
 const signOutSuccess = () => {
   store.user = null
-  $('#message-container').append('<div class="alert alert-success ml-2" role="alert">Signed out successfully. Sign back in to play!</div>')
+  $('#message-container').append('<div class="alert alert-success no-select ml-2" role="alert">Signed out successfully. Sign back in to play!</div>')
   $('.alert').delay(2000).slideUp(200, function () {
     $(this).alert('close')
   })
@@ -81,7 +81,7 @@ const signOutSuccess = () => {
 }
 
 const signOutFailure = () => {
-  $('#message-container').append('<div class="alert alert-success ml-2" role="alert">Sign out failed</div>')
+  $('#message-container').append('<div class="alert alert-success no-select ml-2" role="alert">Sign out failed</div>')
   $('.alert').delay(1500).slideUp(200, function () {
     $(this).alert('close')
   })
