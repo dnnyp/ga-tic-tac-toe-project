@@ -10,6 +10,10 @@ $red: #f00;
 $green: #080;
 $grey: #6c757d;
 
+body {
+  background-image: url('public/seigaiha.png');
+}
+
 .container {
   width: 300px;
 }
@@ -41,13 +45,19 @@ $grey: #6c757d;
   user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
+.welcome {
+  font-family: 'Permanent Marker', cursive;
+}
+
 #message-container {
   display: flex;
 }
 
-#welcome-message {
-  font-family: 'Permanent Marker', cursive;
-  text-align: center;
+#welcome-container {
+  align-items: center;
+  display: flex;
+  height: calc(100vh - 150px);
+  justify-content: center;
 }
 
 // Medium devices (tablets, 768px and up)
@@ -61,7 +71,7 @@ $grey: #6c757d;
     height: 120px;
   }
 
-  #welcome-message {
+  .welcome {
     font-size: 90px;
   }
 }
@@ -75,6 +85,10 @@ $grey: #6c757d;
   .game-square {
     font-size: 150px;
     height: 150px;
+  }
+
+  .welcome {
+    font-size: 120px;
   }
 }
 
@@ -93,7 +107,11 @@ $grey: #6c757d;
     font-size: 3rem;
   }
 
-  #welcome-message {
-    font-size: 120px;
+  .welcome {
+    font-size: 140px;
+  }
+
+  #welcome-container {
+    height: calc(100vh - 200px);
   }
 }
