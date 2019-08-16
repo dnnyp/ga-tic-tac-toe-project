@@ -41,7 +41,24 @@ $grey: #6c757d;
   text-align: center;
 }
 
+// Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .container {
+    width: 360px;
+  }
+
+  .game-square {
+    font-size: 120px;
+    height: 120px;
+  }
+
+  #welcome-message {
+    font-size: 90px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
   .container {
     width: 450px;
   }
@@ -50,20 +67,17 @@ $grey: #6c757d;
     font-size: 150px;
     height: 150px;
   }
-
-  #welcome-message {
-    font-size: 90px;
-  }
 }
 
-@media (min-width: 992px) {
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
   .container {
-    width: 600px;
+    width: 540px;
   }
 
   .game-square {
     font-size: 180px;
-    height: 200px;
+    height: 180px;
   }
 
   .navbar-brand {
