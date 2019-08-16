@@ -30,7 +30,7 @@ const checkForWin = (index, currentPlayer) => {
 
   if (combinations.some(isWin)) {
     store.isOver = true
-    return store.currentPlayer + ' wins!'
+    return store.currentPlayer.toUpperCase() + ' wins!'
   } else if (combinations.every(line => !line.includes(''))) {
     store.isOver = true
     return 'Draw'
