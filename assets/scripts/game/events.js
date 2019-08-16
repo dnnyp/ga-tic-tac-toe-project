@@ -16,7 +16,7 @@ const onSquareClick = event => {
 
   store.index = $(event.target).data('cell-index')
 
-  if (store.gameStatus === 'Game in progress') {
+  if (store.gameStatus === 'turn') {
     if (engine.isEmptySquare(store.index)) {
       store.gameStatus = engine.checkForWin(store.index, store.currentPlayer)
 

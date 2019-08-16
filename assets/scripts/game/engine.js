@@ -35,7 +35,7 @@ const checkForWin = (index, currentPlayer) => {
     store.isOver = true
     return 'Draw'
   } else {
-    return 'Game in progress'
+    return 'turn'
   }
 }
 

@@ -8,7 +8,7 @@ const newGameSuccess = data => {
   store.game = data.game
   store.currentPlayer = 'x'
   store.isOver = false
-  store.gameStatus = 'Game in progress'
+  store.gameStatus = 'turn'
   $('.game-square').text('')
 }
 
@@ -17,10 +17,11 @@ const newGameFailure = () => {
 }
 
 const squareClickSuccess = data => {
-  $('#game-status').html('<h1>' + store.gameStatus + '</h1>')
   store.game = data.game
   $('#square-' + store.index).text(store.currentPlayer)
   engine.changePlayer()
+  const status = store.gameStatus === 'turn' ? store.currentPlayer + "'s turn" : store.gameStatus
+  $('#game-status').html('<h1>' + status + '</h1>')
 }
 
 const takenSquareFailure = () => {
