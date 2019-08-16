@@ -35,7 +35,7 @@ const signInSuccess = data => {
   $('#sign-out').removeClass('d-none')
   $('#game-board').removeClass('d-none')
   $('#game-status').removeClass('d-none')
-  $('#welcome-message').addClass('d-none')
+  $('#welcome-container').addClass('d-none')
 }
 
 const signInFailure = () => {
@@ -79,7 +79,7 @@ const signOutSuccess = () => {
   $('#sign-out').addClass('d-none')
   $('#game-board').addClass('d-none')
   $('#game-status').addClass('d-none')
-  $('#welcome-message').removeClass('d-none')
+  $('#welcome-container').removeClass('d-none')
 }
 
 const signOutFailure = () => {
