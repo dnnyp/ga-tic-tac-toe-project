@@ -28,6 +28,19 @@ $grey: #6c757d;
   justify-content: center;
 }
 
+.navbar-brand {
+  font-family: 'Permanent Marker', cursive;
+}
+
+#message-container {
+  display: flex;
+}
+
+#welcome-message {
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+}
+
 @media (min-width: 576px) {
   .container {
     width: 600px;
@@ -43,6 +56,10 @@ $grey: #6c757d;
   }
 
   .navbar-brand {
-    font-size: 1.75rem;
+    font-size: 3rem;
+  }
+
+  #welcome-message {
+    font-size: 90px;
   }
 }

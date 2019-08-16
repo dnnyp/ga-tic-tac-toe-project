@@ -3,26 +3,26 @@
 const store = require('./../store')
 
 const signUpSuccess = () => {
-  $('#message').text('Sign up success')
-  $('#message').removeClass()
-  $('#message').addClass('alert alert-success')
+  $('#message-container').append('<div class="alert alert-success ml-2" role="alert">Sign up success</div>')
+  $('.alert').delay(1500).slideUp(200, function () {
+    $(this).alert('close')
+  })
   $('form').trigger('reset')
 }
 
 const signUpFailure = () => {
-  $('#message').text('Sign up failed')
-  $('#message').removeClass()
-  $('#message').addClass('alert alert-danger')
+  $('#message-container').append('<div class="alert alert-danger ml-2" role="alert">Sign up failed</div>')
+  $('.alert').delay(1500).slideUp(200, function () {
+    $(this).alert('close')
+  })
   $('form').trigger('reset')
 }
 
 const signInSuccess = data => {
   store.user = data.user
-  $('#message').text('Signed in successfully! User is ' + store.user.email)
-  $('#message').removeClass()
-  $('#message').addClass('alert alert-success')
-  $('#message').fadeTo(2000, 500).slideUp(500, function () {
-    $('#message').slideUp(500)
+  $('#message-container').append('<div class="alert alert-success ml-2" role="alert">Signed in successfully! User is ' + store.user.email + '</div>')
+  $('.alert').delay(2000).slideUp(200, function () {
+    $(this).alert('close')
   })
   $('form').trigger('reset')
   $('#change-password-button').removeClass('d-none')
@@ -33,35 +33,41 @@ const signInSuccess = data => {
   $('#sign-out').removeClass('d-none')
   $('#new-game').removeClass('d-none')
   $('#get-stats').removeClass('d-none')
+  $('#welcome-message').addClass('d-none')
   $('#game-board').removeClass('d-none')
 }
 
 const signInFailure = () => {
-  $('#message').text('Sign in failed')
-  $('#message').removeClass()
-  $('#message').addClass('alert alert-danger')
+  $('#message-container').append('<div class="alert alert-danger ml-2" role="alert">Sign in failed</div>')
+  $('.alert').delay(1500).slideUp(200, function () {
+    $(this).alert('close')
+  })
   $('form').trigger('reset')
 }
 
 const changePasswordSuccess = () => {
-  $('#message').text('Changed password successfully')
-  $('#message').removeClass()
-  $('#message').addClass('alert alert-success')
+  $('#message-container').append('<div class="alert alert-success ml-2" role="alert">Changed password successfully</div>')
+  $('.alert').delay(1500).slideUp(200, function () {
+    $(this).alert('close')
+  })
   $('form').trigger('reset')
 }
 
 const changePasswordFailure = () => {
-  $('#message').text('Change password failed')
-  $('#message').removeClass()
-  $('#message').addClass('alert alert-danger')
+  $('#message-container').append('<div class="alert alert-danger ml-2" role="alert">Change password failed</div>')
+  $('.alert').delay(1500).slideUp(200, function () {
+    $(this).alert('close')
+  })
   $('form').trigger('reset')
 }
 
 const signOutSuccess = () => {
   store.user = null
-  $('#message').text('Signed out successfully. Sign back in to play!')
-  $('#message').removeClass()
-  $('#message').addClass('alert alert-success')
+  $('#message-container').append('<div class="alert alert-success ml-2" role="alert">Signed out successfully. Sign back in to play!</div>')
+  $('.alert').delay(2000).slideUp(200, function () {
+    $(this).alert('close')
+  })
+  $('form').trigger('reset')
   $('#change-password-button').addClass('d-none')
   $('#sign-up-button').removeClass('d-none')
   $('#sign-in-button').removeClass('d-none')
@@ -71,12 +77,14 @@ const signOutSuccess = () => {
   $('#new-game').addClass('d-none')
   $('#get-stats').addClass('d-none')
   $('#game-board').addClass('d-none')
+  $('#welcome-message').removeClass('d-none')
 }
 
 const signOutFailure = () => {
-  $('#message').text('Sign out failed')
-  $('#message').removeClass()
-  $('#message').addClass('alert alert-danger')
+  $('#message-container').append('<div class="alert alert-success ml-2" role="alert">Sign out failed</div>')
+  $('.alert').delay(1500).slideUp(200, function () {
+    $(this).alert('close')
+  })
 }
 
 module.exports = {
