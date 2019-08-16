@@ -1,3 +1,7 @@
+$primary: #00adb5;
+$secondary: #393e46;
+$dark: #222831;
+
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
 
@@ -7,7 +11,7 @@ $green: #080;
 $grey: #6c757d;
 
 .container {
-  width: 600px;
+  width: 300px;
 }
 
 .dropdown-menu {
@@ -16,10 +20,29 @@ $grey: #6c757d;
 
 .game-square {
   align-items: center;
-  color: $grey;
+  color: $primary;
   display: flex;
   font-family: 'Permanent Marker', cursive;
-  font-size: 120px;
-  height: 200px;
+  font-size: 90px;
+  height: 100px;
   justify-content: center;
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 600px;
+  }
+
+  .dropdown-menu {
+    width: 300px;
+  }
+
+  .game-square {
+    font-size: 120px;
+    height: 200px;
+  }
+
+  .navbar-brand {
+    font-size: 1.75rem;
+  }
 }

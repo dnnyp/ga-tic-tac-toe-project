@@ -21,11 +21,19 @@ const signInSuccess = data => {
   $('#message').text('Signed in successfully! User is ' + store.user.email)
   $('#message').removeClass()
   $('#message').addClass('alert alert-success')
+  $('#message').fadeTo(2000, 500).slideUp(500, function () {
+    $('#message').slideUp(500)
+  })
   $('form').trigger('reset')
   $('#change-password-button').removeClass('d-none')
+  $('#sign-up-button').addClass('d-none')
+  $('#sign-in-button').addClass('d-none')
+  $('#sign-up-container').addClass('d-none')
+  $('#sign-in-container').addClass('d-none')
   $('#sign-out').removeClass('d-none')
   $('#new-game').removeClass('d-none')
   $('#get-stats').removeClass('d-none')
+  $('#game-board').removeClass('d-none')
 }
 
 const signInFailure = () => {
@@ -55,9 +63,14 @@ const signOutSuccess = () => {
   $('#message').removeClass()
   $('#message').addClass('alert alert-success')
   $('#change-password-button').addClass('d-none')
+  $('#sign-up-button').removeClass('d-none')
+  $('#sign-in-button').removeClass('d-none')
+  $('#sign-up-container').removeClass('d-none')
+  $('#sign-in-container').removeClass('d-none')
   $('#sign-out').addClass('d-none')
   $('#new-game').addClass('d-none')
   $('#get-stats').addClass('d-none')
+  $('#game-board').addClass('d-none')
 }
 
 const signOutFailure = () => {
