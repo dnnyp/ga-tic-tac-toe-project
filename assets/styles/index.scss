@@ -23,7 +23,7 @@ $grey: #6c757d;
   color: $primary;
   display: flex;
   font-family: 'Permanent Marker', cursive;
-  font-size: 90px;
+  font-size: 100px;
   height: 100px;
   justify-content: center;
 }
@@ -41,13 +41,13 @@ $grey: #6c757d;
   text-align: center;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .container {
     width: 450px;
   }
 
   .game-square {
-    font-size: 110px;
+    font-size: 150px;
     height: 150px;
   }
 
@@ -62,11 +62,15 @@ $grey: #6c757d;
   }
 
   .game-square {
-    font-size: 120px;
+    font-size: 180px;
     height: 200px;
   }
 
   .navbar-brand {
     font-size: 3rem;
+  }
+
+  #welcome-message {
+    font-size: 120px;
   }
 }
