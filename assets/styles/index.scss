@@ -43,11 +43,22 @@ $grey: #6c757d;
 
 @media (min-width: 576px) {
   .container {
-    width: 600px;
+    width: 450px;
   }
 
-  .dropdown-menu {
-    width: 300px;
+  .game-square {
+    font-size: 110px;
+    height: 150px;
+  }
+
+  #welcome-message {
+    font-size: 90px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 600px;
   }
 
   .game-square {
@@ -57,9 +68,5 @@ $grey: #6c757d;
 
   .navbar-brand {
     font-size: 3rem;
-  }
-
-  #welcome-message {
-    font-size: 90px;
   }
 }
