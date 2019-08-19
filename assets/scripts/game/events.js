@@ -1,8 +1,8 @@
 'use strict'
 
 const api = require('./api')
-const ui = require('./ui')
 const engine = require('./engine')
+const ui = require('./ui')
 const store = require('./../store')
 
 const onNewGame = event => {
@@ -52,8 +52,15 @@ const onGetStats = event => {
     .catch(ui.getStatsFailure)
 }
 
+const addHandlers = () => {
+  $('.game-square').on('click', onSquareClick)
+  $('#new-game').on('click', onNewGame)
+  $('#get-stats').on('click', onGetStats)
+}
+
 module.exports = {
   onNewGame,
   onSquareClick,
-  onGetStats
+  onGetStats,
+  addHandlers
 }
