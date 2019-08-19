@@ -6,10 +6,6 @@ const changePlayer = () => {
   store.currentPlayer = store.currentPlayer === 'x' ? 'o' : 'x'
 }
 
-const isEmptySquare = index => {
-  return store.game.cells[index] === ''
-}
-
 const checkForWin = (index, currentPlayer) => {
   const cells = store.game.cells.slice(0)
   cells[index] = currentPlayer
@@ -45,6 +41,5 @@ const isWin = line => {
 
 module.exports = {
   changePlayer,
-  isEmptySquare,
   checkForWin
 }
