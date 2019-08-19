@@ -22,7 +22,17 @@ html {
 }
 
 .col-4 {
+  border-bottom: 5px solid;
+  border-right: 5px solid;
   padding: 0;
+
+  &:nth-child(3n) {
+    border-right: 0;
+  }
+
+  &:nth-last-child(-1n + 3) {
+    border-bottom: 0;
+  }
 }
 
 .container {

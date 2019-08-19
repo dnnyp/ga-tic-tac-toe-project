@@ -13,6 +13,7 @@
     </head>
     <body>
       <header>
+        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <a class="navbar-brand ml-3 mr-4" href="https://dnnyp.github.io/game-project-client/">Tic Tac Toe</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,25 +90,27 @@
                 </div>
               </li>
             </ul>
+            <!-- Displays user authentication alerts -->
             <div id="message-container" class="message"></div>
           </div>
         </nav>
       </header>
       <main>
         <section id="game">
-          <div id="game-board" class="container mt-5">
+          <div id="game-board" class="container mt-3 mt-lg-5">
             <div class="row">
-              <div id="square-0" class="game-square col-4 border-bottom border-right border-primary" data-cell-index="0"></div>
-              <div id="square-1" class="game-square col-4 border border-top-0 border-primary" data-cell-index="1"></div>
-              <div id="square-2" class="game-square col-4 border-bottom border-left border-primary" data-cell-index="2"></div>
-              <div id="square-3" class="game-square col-4 border border-left-0 border-primary" data-cell-index="3"></div>
-              <div id="square-4" class="game-square col-4 border border-primary" data-cell-index="4"></div>
-              <div id="square-5" class="game-square col-4 border border-right-0 border-primary" data-cell-index="5"></div>
-              <div id="square-6" class="game-square col-4 border-top border-right border-primary" data-cell-index="6"></div>
-              <div id="square-7" class="game-square col-4 border border-bottom-0 border-primary" data-cell-index="7"></div>
-              <div id="square-8" class="game-square col-4 border-top border-left border-primary" data-cell-index="8"></div>
+              <div id="square-0" class="game-square col-4" data-cell-index="0"></div>
+              <div id="square-1" class="game-square col-4" data-cell-index="1"></div>
+              <div id="square-2" class="game-square col-4" data-cell-index="2"></div>
+              <div id="square-3" class="game-square col-4" data-cell-index="3"></div>
+              <div id="square-4" class="game-square col-4" data-cell-index="4"></div>
+              <div id="square-5" class="game-square col-4" data-cell-index="5"></div>
+              <div id="square-6" class="game-square col-4" data-cell-index="6"></div>
+              <div id="square-7" class="game-square col-4" data-cell-index="7"></div>
+              <div id="square-8" class="game-square col-4" data-cell-index="8"></div>
             </div>
           </div>
+          <!-- Displays game status messages -->
           <div id="game-status" class="status text-center mt-2 mt-lg-3 mt-xl-4"></div>
         </section>
         <div id="welcome-container" class="welcome">

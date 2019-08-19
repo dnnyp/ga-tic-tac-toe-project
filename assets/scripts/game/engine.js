@@ -26,6 +26,7 @@ const checkForWin = (index, currentPlayer) => {
 
   if (combinations.some(isWin)) {
     store.isOver = true
+    store.combination = combinations.find(isWin) // winning combination
     return store.currentPlayer.toUpperCase() + ' wins!'
   } else if (combinations.every(line => !line.includes(''))) {
     store.isOver = true
@@ -35,6 +36,7 @@ const checkForWin = (index, currentPlayer) => {
   }
 }
 
+// helper function for checkForWin
 const isWin = line => {
   return line[0] !== '' && line[0] === line[1] && line[0] === line[2]
 }

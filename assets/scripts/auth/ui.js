@@ -36,7 +36,7 @@ const changePasswordFailure = () => {
 }
 
 const signOutSuccess = () => {
-  store.user = null
+  store.user = null // resets user on signout
   newAlert('success', 'Signed out successfully. Sign back in to play!', 2000)
   $('form').trigger('reset')
   hideOnLogout()
@@ -79,6 +79,7 @@ const showOnLogin = () => {
   $('#game').removeClass('d-none')
 }
 
+// alerts factory function
 const newAlert = (type, message, delay) => {
   $('#message-container').append(`<div class="alert alert-${type} no-select ml-2" role="alert">${message}</div>`)
   $('.alert').delay(delay).slideUp(200, function () {
