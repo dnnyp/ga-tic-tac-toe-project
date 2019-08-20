@@ -11,7 +11,9 @@ const newGameSuccess = data => {
   store.currentPlayer = 'x'
   store.isOver = false
   store.gameStatus = 'turn'
+  store.winningLine = -1
   $('.game-square').text('') // reset game board
+  $('.game-square').css('background', '') // reset background color
 }
 
 const newGameFailure = () => {
@@ -53,6 +55,28 @@ const updateGameStatus = message => {
   $('#game-status').html(`<h3 class="no-select">${message}</h3>`)
 }
 
+const highlightWin = () => {
+  const combinations = [
+    // row indexes
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    // column indexes
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    // cross indexes
+    [0, 4, 8],
+    [2, 4, 6]
+  ]
+
+  if (store.winningLine !== -1) {
+    combinations[store.winningLine].forEach(index => {
+      $('#square-' + index).css('background', 'rgba(0, 173, 181, 0.3)')
+    })
+  }
+}
+
 module.exports = {
   newGameSuccess,
   newGameFailure,
@@ -62,5 +86,6 @@ module.exports = {
   getGamesPlayedSuccess,
   getGamesWonSuccess,
   getStatsFailure,
-  updateGameStatus
+  updateGameStatus,
+  highlightWin
 }

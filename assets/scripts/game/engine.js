@@ -7,8 +7,8 @@ const changePlayer = () => {
 }
 
 const checkForWin = (index, currentPlayer) => {
-  const cells = store.game.cells.slice(0)
-  cells[index] = currentPlayer
+  const cells = store.game.cells.slice(0) // duplicate the stored game array
+  cells[index] = currentPlayer // add new move to the duplicated array
 
   const combinations = [
     // check row
@@ -24,9 +24,9 @@ const checkForWin = (index, currentPlayer) => {
     [cells[2], cells[4], cells[6]]
   ]
 
-  if (combinations.some(isWin)) {
+  store.winningLine = combinations.findIndex(isWin) // index of winning line
+  if (store.winningLine !== -1) {
     store.isOver = true
-    store.combination = combinations.find(isWin) // winning combination
     return store.currentPlayer.toUpperCase() + ' wins!'
   } else if (combinations.every(line => !line.includes(''))) {
     store.isOver = true

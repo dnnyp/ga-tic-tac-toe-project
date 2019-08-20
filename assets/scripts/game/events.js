@@ -33,6 +33,7 @@ const onSquareClick = event => {
 
       api.update(move)
         .then(ui.squareClickSuccess)
+        .then(ui.highlightWin)
         .catch(ui.takenSquareFailure)
     } else {
       ui.takenSquareFailure() // square is taken

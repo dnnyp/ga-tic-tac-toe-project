@@ -17,7 +17,8 @@ $(() => {
 
   store.currentPlayer = 'x'
   store.isOver = false
-  store.gameStatus = 'Game in progress'
+  store.gameStatus = 'turn'
+  store.winningLine = -1
   gameEvents.addHandlers()
   $('html').removeAttr('style')
 })
