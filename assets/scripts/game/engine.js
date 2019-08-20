@@ -6,13 +6,9 @@ const changePlayer = () => {
   store.currentPlayer = store.currentPlayer === 'x' ? 'o' : 'x'
 }
 
-const isEmptySquare = index => {
-  return store.game.cells[index] === ''
-}
-
 const checkForWin = (index, currentPlayer) => {
-  const cells = store.game.cells.slice(0)
-  cells[index] = currentPlayer
+  const cells = store.game.cells.slice(0) // duplicate the stored game array
+  cells[index] = currentPlayer // add new move to the duplicated array
 
   const combinations = [
     // check row
@@ -28,7 +24,8 @@ const checkForWin = (index, currentPlayer) => {
     [cells[2], cells[4], cells[6]]
   ]
 
-  if (combinations.some(isWin)) {
+  store.winningLine = combinations.findIndex(isWin) // index of winning line
+  if (store.winningLine !== -1) {
     store.isOver = true
     return store.currentPlayer.toUpperCase() + ' wins!'
   } else if (combinations.every(line => !line.includes(''))) {
@@ -39,12 +36,12 @@ const checkForWin = (index, currentPlayer) => {
   }
 }
 
+// helper function for checkForWin
 const isWin = line => {
   return line[0] !== '' && line[0] === line[1] && line[0] === line[2]
 }
 
 module.exports = {
   changePlayer,
-  isEmptySquare,
   checkForWin
 }

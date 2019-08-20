@@ -12,7 +12,7 @@ const onSignUp = event => {
 
   api.signUp(data)
     .then(ui.signUpSuccess)
-    .then(() => api.signIn(data))
+    .then(() => api.signIn(data)) // automatically logs users in after signup
     .then(ui.signInSuccess)
     .catch(ui.signUpFailure)
 }

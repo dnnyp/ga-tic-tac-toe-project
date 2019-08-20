@@ -36,7 +36,7 @@ const changePasswordFailure = () => {
 }
 
 const signOutSuccess = () => {
-  store.user = null
+  store.user = null // resets user on signout
   newAlert('success', 'Signed out successfully. Sign back in to play!', 2000)
   $('form').trigger('reset')
   hideOnLogout()
@@ -61,6 +61,8 @@ const showOnLogout = () => {
   $('#sign-in-button').removeClass('d-none')
   $('#sign-in-container').removeClass('d-none')
   $('#welcome-container').removeClass('d-none')
+  $('#welcome-message').removeClass()
+  $('#welcome-message').addClass('no-select animated fadeInUp')
 }
 
 const hideOnLogin = () => {
@@ -76,14 +78,14 @@ const showOnLogin = () => {
   $('#get-stats').removeClass('d-none')
   $('#sign-out').removeClass('d-none')
   $('#change-password-button').removeClass('d-none')
-  $('#game').removeClass('d-none')
+  $('#game').removeClass()
+  $('#game').addClass('no-select animated fadeIn slower')
 }
 
+// alerts factory function
 const newAlert = (type, message, delay) => {
   $('#message-container').append(`<div class="alert alert-${type} no-select ml-2" role="alert">${message}</div>`)
-  $('.alert').delay(delay).slideUp(200, function () {
-    $(this).alert('close')
-  })
+  $('.alert').delay(delay).fadeOut(2000)
 }
 
 module.exports = {

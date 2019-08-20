@@ -14,12 +14,13 @@ const onNewGame = event => {
 const onSquareClick = event => {
   event.preventDefault()
 
-  store.index = $(event.target).data('cell-index')
+  store.index = $(event.target).data('cell-index') // index of selected square
 
-  if (store.gameStatus === 'turn') {
-    if (engine.isEmptySquare(store.index)) {
+  if (store.gameStatus === 'turn') { // if game is not over
+    if (store.game.cells[store.index] === '') { // if square is empty
       store.gameStatus = engine.checkForWin(store.index, store.currentPlayer)
 
+      // new move object
       const move = {
         game: {
           cell: {
@@ -32,12 +33,13 @@ const onSquareClick = event => {
 
       api.update(move)
         .then(ui.squareClickSuccess)
+        .then(ui.highlightWin)
         .catch(ui.takenSquareFailure)
     } else {
-      ui.takenSquareFailure()
+      ui.takenSquareFailure() // square is taken
     }
   } else {
-    ui.gameOverFailure()
+    ui.gameOverFailure() // game is over
   }
 }
 
