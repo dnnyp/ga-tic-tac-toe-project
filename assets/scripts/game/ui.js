@@ -22,7 +22,7 @@ const newGameFailure = () => {
 
 const squareClickSuccess = data => {
   store.game = data.game // update stored game
-  $('#square-' + store.index).html('<span class="no-select">' + store.currentPlayer + '</span>')
+  $('#square-' + store.index).html('<span class="no-select animated fadeIn faster">' + store.currentPlayer + '</span>')
   engine.changePlayer()
   const status = store.gameStatus === 'turn' ? store.currentPlayer.toUpperCase() + "'s turn" : store.gameStatus
   updateGameStatus(status)

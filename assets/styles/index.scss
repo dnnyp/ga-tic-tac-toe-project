@@ -1,8 +1,10 @@
 $primary: #00adb5;
 $secondary: #393e46;
+$secondary-transparent: rgba(57, 62, 70, 0.3);
 $dark: #222831;
 
 @import '~bootstrap/scss/bootstrap';
+@import '~animate.css/animate.css';
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
 
 $black: #000;
@@ -52,6 +54,10 @@ html {
   font-size: 20vmin;
   height: calc(100% / 3);
   justify-content: center;
+
+  &:hover {
+    background: $secondary-transparent;
+  }
 }
 
 .message {
@@ -88,6 +94,11 @@ html {
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  .col-4 {
+    border-bottom: 10px solid;
+    border-right: 10px solid;
+  }
+
   .navbar-brand {
     font-size: 3rem;
   }
