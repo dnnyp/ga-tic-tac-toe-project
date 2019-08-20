@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html style="opacity: 0">
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand ml-3 mr-4 animated pulse slower infinite" href="https://dnnyp.github.io/game-project-client/">Tic Tac Toe</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown pr-2">
+                <a class="nav-link dropdown-toggle" href="#" id="sign-up-button" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Sign up
+                </a>
+                <div class="dropdown-menu p-4" id="sign-up-container" aria-labelledby="sign-up-button">
+                  <form id="sign-up">
+                    <div class="form-group">
+                      <label for="sign-up-email">Email</label>
+                      <input type="email" class="form-control" id="sign-up-email" name="credentials[email]" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="sign-up-password">Password</label>
+                      <input type="password" class="form-control" id="sign-up-password" name="credentials[password]" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                      <label for="sign-up-password-confirm">Confirm Password</label>
+                      <input type="password" class="form-control" id="sign-up-password-confirm" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign up</button>
+                  </form>
+                </div>
+              </li>
+              <li class="nav-item dropdown pr-2">
+                <a class="nav-link dropdown-toggle" href="#" id="sign-in-button" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Sign in
+                </a>
+                <div class="dropdown-menu p-4" id="sign-in-container" aria-labelledby="sign-in-button">
+                  <form id="sign-in">
+                    <div class="form-group">
+                      <label for="sign-in-email">Email</label>
+                      <input type="email" class="form-control" id="sign-in-email" name="credentials[email]" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="sign-in-password">Password</label>
+                      <input type="password" class="form-control" id="sign-in-password" name="credentials[password]" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                  </form>
+                </div>
+              </li>
+              <li class="nav-item pr-3">
+                <button id="new-game" class="btn btn-primary">New game</button>
+              </li>
+              <li class="nav-item pr-3">
+                <button id="get-stats" class="btn btn-secondary">Get stats</button>
+              </li>
+              <li class="nav-item pr-3">
+                <button id="sign-out" class="btn btn-secondary">Sign out</button>
+              </li>
+              <li class="nav-item dropdown pr-2">
+                <a class="nav-link dropdown-toggle" href="#" id="change-password-button" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Change password
+                </a>
+                <div class="dropdown-menu p-4" id="change-password-container" aria-labelledby="change-password-button">
+                  <form id="change-password">
+                    <div class="form-group">
+                      <label for="old-password">Old Password</label>
+                      <input type="password" class="form-control" id="old-password" name="passwords[old]" placeholder="Old Password">
+                    </div>
+                    <div class="form-group">
+                      <label for="new-password">New Password</label>
+                      <input type="password" class="form-control" id="new-password" name="passwords[new]" placeholder="New Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Change Password</button>
+                  </form>
+                </div>
+              </li>
+            </ul>
+            <!-- Displays user authentication alerts -->
+            <div id="message-container" class="message"></div>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <section id="game">
+          <div id="game-board" class="container mt-3 mt-lg-5">
+            <div class="row">
+              <div id="square-0" class="game-square col-4" data-cell-index="0"></div>
+              <div id="square-1" class="game-square col-4" data-cell-index="1"></div>
+              <div id="square-2" class="game-square col-4" data-cell-index="2"></div>
+              <div id="square-3" class="game-square col-4" data-cell-index="3"></div>
+              <div id="square-4" class="game-square col-4" data-cell-index="4"></div>
+              <div id="square-5" class="game-square col-4" data-cell-index="5"></div>
+              <div id="square-6" class="game-square col-4" data-cell-index="6"></div>
+              <div id="square-7" class="game-square col-4" data-cell-index="7"></div>
+              <div id="square-8" class="game-square col-4" data-cell-index="8"></div>
+            </div>
+          </div>
+          <!-- Displays game status messages -->
+          <div id="game-status" class="status text-center mt-2 mt-lg-3 mt-xl-4"></div>
+        </section>
+        <div id="welcome-container" class="welcome">
+          <h1 id="welcome-message" class="no-select animated fadeInUp delay-2s">Sign in to play!</h1>
+        </div>
+      </main>
+    </body>
+</html>
